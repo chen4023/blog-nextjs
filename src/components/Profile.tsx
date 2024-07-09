@@ -1,24 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
+import profileImg from '../../public/images/profile.png'
 
 export default function Profile() {
   return (
-    <section className="flex flex-col justify-center items-center gap-1">
+    <section className="text-center">
       <Image
-        src="/image/profile.png"
+        src={profileImg}
         alt="profile"
-        width={200}
-        height={200}
-        className="rounded-full"
+        width={250}
+        height={250}
+        className="rounded-full mx-auto mb-2"
+        priority // 해당 이미지는 중요하니까 우선순위로 다운로드 해줘
       />
-      <h1 className="text-2xl font-bold">{"Hi, I'm Chen"}</h1>
-      <p className="text-lg font-semibold">Front Engineer</p>
+      <h1 className="text-3xl font-bold">{"Hi, I'm Chen"}</h1>
+      <p className="text-xl font-semibold">Front Engineer</p>
       <p>꿈을 코딩하는 사람, 드림코더 엘리</p>
       <Link
         href="/contact"
-        className=" bg-yellow-400 px-3 py-1 rounded-xl font-bold"
+
       >
-        Contact Me
+        <button className=" bg-yellow-400 px-3 py-1 rounded-xl font-bold mt-2">Contact Me</button>
       </Link>
     </section>
   );
