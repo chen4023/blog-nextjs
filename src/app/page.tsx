@@ -1,3 +1,9 @@
+import Profile from "@/components/Profile";
+
 export default function Home() {
-  return <main className="bg-gray-500 text-white">하이</main>;
+  return (
+    <section className="flex justify-center items-center py-5">
+      <Profile />
+    </section>
+  );
 }
