@@ -12,12 +12,14 @@ export default function Card({ post }: { post: Post }) {
           alt="postImg"
           width={310}
           height={200}
-          className="w-full rounded-t-md"
+          className="rounded-t-md w-full"
         />
         <div className="p-3">
           <p className="text-sm text-right">{date}</p>
           <div className="flex flex-col items-center justify-center p-2">
-            <h1 className="text-lg font-bold">{title}</h1>
+            <h1 className="w-full truncate text-center text-lg font-bold">
+              {title}
+            </h1>
             <p className="w-full truncate text-sm text-center">{description}</p>
             <span className="text-sm bg-green-100 px-2 rounded-lg mt-2">
               {category}

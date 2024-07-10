@@ -29,7 +29,7 @@ type Props = {
 export default function MultiCarousel({ children }: Props) {
   return (
     //grid 적용하니까 infinite growing 해결됨... 왜?
-    <div className="grid overflow-hidden w-full">
+    <div className="grid">
       <Carousel infinite autoPlay responsive={responsive} itemClass="m-2">
         {children}
       </Carousel>
