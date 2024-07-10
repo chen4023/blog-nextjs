@@ -1,5 +1,4 @@
 import CarouselPosts from "@/components/CarouselPosts";
-import CategoryMenu from "@/components/CategoryMenu";
 import FeaturedPosts from "@/components/FeaturedPosts";
 import Profile from "@/components/Profile";
 
