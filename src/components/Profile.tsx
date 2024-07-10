@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import profileImg from '../../public/images/profile.png'
+import profileImg from "../../public/images/profile.png";
 
 export default function Profile() {
   return (
@@ -16,10 +16,10 @@ export default function Profile() {
       <h1 className="text-3xl font-bold">{"Hi, I'm Chen"}</h1>
       <p className="text-xl font-semibold">Front Engineer</p>
       <p>꿈을 코딩하는 사람, 드림코더 엘리</p>
-      <Link
-        href="/contact"
-      >
-        <button className=" bg-yellow-400 px-3 py-1 rounded-xl font-bold mt-2">Contact Me</button>
+      <Link href="/contact">
+        <button className=" bg-yellow-400 px-3 py-1 rounded-xl font-bold mt-2">
+          Contact Me
+        </button>
       </Link>
     </section>
   );

@@ -1,8 +1,9 @@
-import { getPosts } from "@/service/posts";
+import { getFeaturedPosts } from "@/service/posts";
 import Card from "@/components/Card";
 
 export default async function FeaturedPosts() {
-  const posts = await getPosts();
+  //featured가 true인 포스트만 포스팅
+  const posts = await getFeaturedPosts();
   return (
     <div>
       <h1>Featured Posts</h1>
