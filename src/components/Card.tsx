@@ -1,27 +1,30 @@
 import Image from "next/image";
 import { Post } from "@/service/posts";
+import Link from "next/link";
 
 export default function Card({ post }: { post: Post }) {
   const { title, description, date, category, path } = post;
   return (
-    <div className="border border-transparent shadow-lg rounded-md">
-      <Image
-        src={`/images/posts/${path}.png`}
-        alt="postImg"
-        width={300}
-        height={300}
-        className="rounded-t-md"
-      />
-      <div className="p-3">
-        <p className="text-sm text-right">{date}1</p>
-        <div className="flex flex-col items-center justify-center">
-          <h1 className="font-bold">{title}</h1>
-          <p className="text-sm">{description}</p>
-          <p className="text-sm bg-green-100 px-2 rounded-sm mt-2">
-            {category}
-          </p>
+    <Link href={`/posts/${path}`}>
+      <article className="shadow-lg rounded-md overflow-hidden hover:shadow-2xl">
+        <Image
+          src={`/images/posts/${path}.png`}
+          alt="postImg"
+          width={310}
+          height={200}
+          className="rounded-t-md"
+        />
+        <div className="p-3">
+          <p className="text-sm text-right">{date}</p>
+          <div className="flex flex-col items-center justify-center p-2">
+            <h1 className="text-lg font-bold">{title}</h1>
+            <p className="w-full truncate text-sm text-center">{description}</p>
+            <p className="text-sm bg-green-100 px-2 rounded-lg mt-2">
+              {category}
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
+      </article>
+    </Link>
   );
 }
