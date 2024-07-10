@@ -1,9 +1,11 @@
+import FeaturedPosts from "@/components/FeaturedPosts";
 import Profile from "@/components/Profile";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <section className="flex justify-center items-center py-5">
+    <section className="flex flex-col justify-center items-center py-5">
       <Profile />
+      <FeaturedPosts />
     </section>
   );
 }
