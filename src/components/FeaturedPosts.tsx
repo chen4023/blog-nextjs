@@ -6,7 +6,7 @@ export default async function FeaturedPosts() {
   const posts = await getFeaturedPosts();
   return (
     <div>
-      <h1 className="text-lg font-bold">Featured Posts</h1>
+      <h1 className="text-xl font-bold">Featured Posts</h1>
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         {posts.map((post, index) => (
           <li key={index}>
