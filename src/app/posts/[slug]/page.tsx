@@ -13,8 +13,8 @@ export default async function Page({ params: { slug } }: Props) {
   // 1. 전달된 slug에 해당하는 포스트 데이터(content)를 읽어와서
   // 2. 데이터를 마크다운뷰어에 표기
 
-  const post = await getPostData(slug);
-  const { title, description, date, category, path, content } = post;
+  const { title, description, date, category, path, content } =
+    await getPostData(slug);
   return (
     <article className="py-10 px-5 flex flex-col justify-center items-center gap-4">
       <h1 className="text-5xl font-bold">{title}</h1>
