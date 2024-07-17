@@ -6,3 +6,11 @@ html,
 body {
   height: 100vh;
 }
+
+input {
+  outline: none;
+}
+
+textarea {
+  outline: none;
+}
