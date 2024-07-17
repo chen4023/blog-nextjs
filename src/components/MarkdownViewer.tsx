@@ -2,12 +2,13 @@
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Image from "next/image";
 
 export default function MarkdownViewer({ content }: { content: string }) {
   return (
     <Markdown
-      className="prose lg:prose-xl mt-8"
+      className="prose lg:prose-xl mt-8 max-w-none"
       remarkPlugins={[remarkGfm]}
       components={{
         code(props) {
@@ -18,7 +19,7 @@ export default function MarkdownViewer({ content }: { content: string }) {
               {...rest}
               PreTag="div"
               language={match[1]}
-              style={materialDark}
+              style={dracula}
             >
               {String(children).replace(/\n$/, "")}
             </SyntaxHighlighter>
@@ -28,6 +29,15 @@ export default function MarkdownViewer({ content }: { content: string }) {
             </code>
           );
         },
+        img: (image) => (
+          <Image
+            className="w-full max-h-80 object-cover rounded-sm"
+            src={image.src || ""}
+            alt={image.alt || ""}
+            width={500}
+            height={350}
+          />
+        ),
       }}
     >
       {content}
