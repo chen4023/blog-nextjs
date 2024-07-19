@@ -15,5 +15,5 @@ export default function ContactPage() {
       <h1 className="text-3xl font-bold mb-4">Or Send me an email</h1>
       <SendEmail />
     </div>
-  )
+  );
 }
