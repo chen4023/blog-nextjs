@@ -5,7 +5,7 @@ export type EmailData = {
   subject: string;
   message: string;
 };
-
+// nodemailer transporter 설정
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
@@ -16,13 +16,14 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// 설정한 transporter를 사용한 sendEmail
 export async function sendEmail({ subject, from, message }: EmailData) {
   const mailData = {
     to: process.env.NEXT_PUBLIC_AUTH_USER,
     subject: `[BLOG] ${subject}`,
     from,
     html: `
-    <h1>${subject}</h1>
+    <h1>Title: ${subject}</h1>
     <div>${message}</div>
     <br/>
     <p>보낸사람: ${from}</p>
