@@ -11,7 +11,7 @@ const bodySchma = yup.object().shape({
 export async function POST(req: Request) {
   const body = await req.json();
   if (!bodySchma.isValidSync(body)) {
-    // isValidSync : 설정한 bodyShma에 맞는지 유효성 검사 확인
+    // isValidSync : 설정한 bodySchma에 맞는지 유효성 검사 확인
     return new Response(JSON.stringify({ message: "메일 전송에 실패했음" }), {
       status: 400,
     });
