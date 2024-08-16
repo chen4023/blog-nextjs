@@ -2,6 +2,7 @@ import { sendEmail } from "@/service/email";
 import * as yup from "yup";
 // server에서 실행되는 함수
 const bodySchma = yup.object().shape({
+  // 중첩 객체 스키마 정의
   from: yup.string().email().required(),
   subject: yup.string().required(),
   message: yup.string().required(),

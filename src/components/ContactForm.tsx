@@ -21,7 +21,6 @@ const DEFAULT_FORM = {
 
 export default function ContactForm() {
   const [form, setForm] = useState<Form>(DEFAULT_FORM);
-
   const [banner, setBanner] = useState<BannerData | null>(null);
 
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
